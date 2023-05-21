@@ -2,6 +2,7 @@
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Data.SqlClient
 Imports ScottPlot
+Imports ScottPlot.Styles
 
 Public Class Form1
 
@@ -25,7 +26,53 @@ Public Class Form1
         TabControl1.ItemSize = New Size(0, 1)
         TabControl1.SizeMode = TabSizeMode.Fixed
 
+        ComboBox1.SelectedItem = ComboBox1.Items(1)
+
         Button1.PerformClick()
+
+        ' Testnews
+        Dim dataTableNews As New DataTable()
+
+        ' Define the columns of the DataTable
+        dataTableNews.Columns.Add("Von", GetType(String))
+        dataTableNews.Columns.Add("Betreff", GetType(String))
+        dataTableNews.Columns.Add("Timestamp", GetType(Date))
+
+        ' Add test data rows to the DataTable
+        dataTableNews.Rows.Add("Testabsender", "Testnews", Now())
+        dataTableNews.Rows.Add("Testabsender", "Testnews", Now())
+        dataTableNews.Rows.Add("Testabsender", "Testnews", Now())
+        dataTableNews.Rows.Add("Testabsender", "Testnews", Now())
+        dataTableNews.Rows.Add("Testabsender", "Testnews", Now())
+        dataTableNews.Rows.Add("Testabsender", "Testnews", Now())
+        dataTableNews.Rows.Add("Testabsender", "Testnews", Now())
+
+        ' Set the DataTable as the data source for the DataGridView
+        DataGridView3.DataSource = dataTableNews
+
+        MaterialMultiLineTextBox1.Text = vbCrLf & "Hallo," & vbCrLf & vbCrLf & "Dies ist eine Testmail, welche in der Datagridview ausgewählt wurde." & vbCrLf & vbCrLf & "mit freundlichen Grüßen" & vbCrLf & "Testabsender"
+
+        ' Test Arbeitspakte
+
+        ' Testnews
+        Dim dataTableJobs As New DataTable()
+
+        ' Define the columns of the DataTable
+        dataTableJobs.Columns.Add("Statistik", GetType(String))
+        dataTableJobs.Columns.Add("LfdSemNr", GetType(Integer))
+        dataTableJobs.Columns.Add("Anzahl", GetType(Integer))
+        dataTableJobs.Columns.Add("Aufgabe", GetType(String))
+        dataTableJobs.Columns.Add("Timestamp", GetType(Date))
+
+        dataTableJobs.Rows.Add("std", 247, 3, "Vor-PL", Now())
+        dataTableJobs.Rows.Add("per", 247, 2, "Vor-PL", Now())
+        dataTableJobs.Rows.Add("hab", 247, 5, "Vor-PL", Now())
+
+        DataGridView1.DataSource = dataTableJobs
+
+        DataGridView1.Columns("Aufgabe").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        DataGridView3.Columns("Betreff").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+
 
     End Sub
 
@@ -36,17 +83,19 @@ Public Class Form1
 
         With FormsPlot1.Plot
 
-            Dim plot = .AddBar(dateneingaenge, SystemColors.GradientInactiveCaption)
+            Dim plot = .AddBar(dateneingaenge, Color.SteelBlue)
             plot.ShowValuesAboveBars = MaterialCheckbox3.Checked
 
             .XLabel("laufende Erhebungen")
-            .YLabel("Dateneingänge")
+            .Title("Dateneingänge")
             .Grid(enable:=MaterialCheckbox2.Checked)
             .SetAxisLimits(yMin:=0)
             .XTicks(positions:={0, 1, 2}, labels:=statistiken)
             .YAxis.Ticks(False)
 
         End With
+
+        FormsPlot1.Plot.YAxis.Ticks(False)
 
         For Each ctrl As Windows.Forms.Control In Panel3.Controls
 
@@ -58,6 +107,8 @@ Public Class Form1
             End If
 
         Next
+
+        FormsPlot1.Plot.Style(Style.Seaborn)
 
         FormsPlot1.Refresh()
 
@@ -86,13 +137,15 @@ Public Class Form1
             bar2.ShowValuesAboveBars = True
 
             .SetAxisLimits(yMin:=0)
-            .YLabel("Anteil geliefert an Gesamtzahl Melder")
+            .Title("Anteil geliefert an Gesamtzahl Melder")
             .XLabel("laufende Erhebungen")
             .XTicks(positions:={0, 1, 2}, labels:=statistiken)
             .Grid(enable:=False)
             .YAxis.Ticks(MaterialCheckbox1.Checked)
 
         End With
+
+        FormsPlot2.Plot.Style(Style.Seaborn)
 
         FormsPlot2.Refresh()
 
@@ -108,6 +161,8 @@ Public Class Form1
         pie.ShowPercentages = MaterialCheckbox5.Checked
         pie.ShowValues = MaterialCheckbox4.Checked
         pie.SliceLabels = fehler
+
+        FormsPlot3.Plot.Style(dataBackground:=Color.Transparent)
 
         FormsPlot3.Refresh()
 
@@ -136,6 +191,52 @@ Public Class Form1
 
         End With
 
+        Select Case ComboBox1.SelectedItem
+
+            Case "Blue1"
+                FormsPlot4.Plot.Style(Style.Blue1)
+
+            Case "Blue2"
+                FormsPlot4.Plot.Style(Style.Blue2)
+
+            Case "Blue3"
+                FormsPlot4.Plot.Style(Style.Blue3)
+
+            Case "Gray1"
+                FormsPlot4.Plot.Style(Style.Gray1)
+
+            Case "Gray2"
+                FormsPlot4.Plot.Style(Style.Gray2)
+
+            Case "Seaborn"
+                FormsPlot4.Plot.Style(Style.Seaborn)
+
+            Case "Burgundy"
+                FormsPlot4.Plot.Style(Style.Burgundy)
+
+            Case "Hazel"
+                FormsPlot4.Plot.Style(Style.Hazel)
+
+            Case "Pink"
+                FormsPlot4.Plot.Style(Style.Pink)
+
+            Case "Black"
+                FormsPlot4.Plot.Style(Style.Black)
+
+            Case "Monospace"
+                FormsPlot4.Plot.Style(Style.Monospace)
+
+            Case "Light1"
+                FormsPlot4.Plot.Style(Style.Light1)
+
+            Case "Light2"
+                FormsPlot4.Plot.Style(Style.Light2)
+
+            Case Else
+                FormsPlot4.Plot.Style(Style.Default)
+
+        End Select
+
         FormsPlot4.Refresh()
 
     End Sub
@@ -145,7 +246,7 @@ Public Class Form1
 
         Dim button As Button = CType(sender, Button)
         Dim borderThickness As Integer = 3
-        Dim borderColor As Color = Color.RoyalBlue
+        Dim borderColor As Color = Color.SteelBlue
 
         If button Is selectedButton Then
 
@@ -296,6 +397,12 @@ Public Class Form1
             MaterialCheckbox5.CheckedChanged, MaterialCheckbox6.CheckedChanged
 
         pieChart()
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+        regression()
 
     End Sub
 
