@@ -112,6 +112,11 @@ Partial Class Form1
         Me.FormsPlot2 = New ScottPlot.FormsPlot()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FormsPlot1 = New ScottPlot.FormsPlot()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.MaterialProgressBar3 = New MaterialSkin.Controls.MaterialProgressBar()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -122,6 +127,7 @@ Partial Class Form1
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -522,19 +528,7 @@ Partial Class Form1
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Label16)
-        Me.TabPage2.Controls.Add(Me.Label15)
-        Me.TabPage2.Controls.Add(Me.LinkLabel6)
-        Me.TabPage2.Controls.Add(Me.LinkLabel5)
-        Me.TabPage2.Controls.Add(Me.Label14)
-        Me.TabPage2.Controls.Add(Me.LinkLabel3)
-        Me.TabPage2.Controls.Add(Me.Label13)
-        Me.TabPage2.Controls.Add(Me.Label12)
-        Me.TabPage2.Controls.Add(Me.Label5)
-        Me.TabPage2.Controls.Add(Me.Label4)
-        Me.TabPage2.Controls.Add(Me.MaterialProgressBar2)
-        Me.TabPage2.Controls.Add(Me.Label3)
-        Me.TabPage2.Controls.Add(Me.MaterialProgressBar1)
+        Me.TabPage2.Controls.Add(Me.Panel4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -546,26 +540,26 @@ Partial Class Form1
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label16.Location = New System.Drawing.Point(32, 439)
+        Me.Label16.Location = New System.Drawing.Point(30, 523)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(46, 23)
+        Me.Label16.Size = New System.Drawing.Size(146, 23)
         Me.Label16.TabIndex = 21
-        Me.Label16.Text = "Sync"
+        Me.Label16.Text = "Synchronisierung:"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label15.Location = New System.Drawing.Point(32, 368)
+        Me.Label15.Location = New System.Drawing.Point(30, 479)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(129, 23)
+        Me.Label15.Size = New System.Drawing.Size(133, 23)
         Me.Label15.TabIndex = 20
-        Me.Label15.Text = "Datenabholung"
+        Me.Label15.Text = "Datenabholung:"
         '
         'LinkLabel6
         '
         Me.LinkLabel6.AutoSize = True
-        Me.LinkLabel6.Location = New System.Drawing.Point(32, 472)
+        Me.LinkLabel6.Location = New System.Drawing.Point(182, 523)
         Me.LinkLabel6.Name = "LinkLabel6"
         Me.LinkLabel6.Size = New System.Drawing.Size(227, 40)
         Me.LinkLabel6.TabIndex = 19
@@ -575,7 +569,7 @@ Partial Class Form1
         'LinkLabel5
         '
         Me.LinkLabel5.AutoSize = True
-        Me.LinkLabel5.Location = New System.Drawing.Point(32, 400)
+        Me.LinkLabel5.Location = New System.Drawing.Point(182, 481)
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(218, 20)
         Me.LinkLabel5.TabIndex = 18
@@ -586,7 +580,7 @@ Partial Class Form1
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI Semilight", 13.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label14.Location = New System.Drawing.Point(32, 315)
+        Me.Label14.Location = New System.Drawing.Point(30, 426)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(147, 30)
         Me.Label14.TabIndex = 17
@@ -595,7 +589,7 @@ Partial Class Form1
         'LinkLabel3
         '
         Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Location = New System.Drawing.Point(596, 235)
+        Me.LinkLabel3.Location = New System.Drawing.Point(592, 242)
         Me.LinkLabel3.Name = "LinkLabel3"
         Me.LinkLabel3.Size = New System.Drawing.Size(147, 20)
         Me.LinkLabel3.TabIndex = 16
@@ -606,7 +600,7 @@ Partial Class Form1
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label13.Location = New System.Drawing.Point(32, 187)
+        Me.Label13.Location = New System.Drawing.Point(30, 194)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(46, 23)
         Me.Label13.TabIndex = 15
@@ -615,7 +609,7 @@ Partial Class Form1
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(32, 132)
+        Me.Label12.Location = New System.Drawing.Point(30, 139)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(148, 20)
         Me.Label12.TabIndex = 14
@@ -625,7 +619,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semilight", 13.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.Location = New System.Drawing.Point(32, 29)
+        Me.Label5.Location = New System.Drawing.Point(30, 36)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(237, 30)
         Me.Label5.TabIndex = 13
@@ -634,7 +628,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(32, 222)
+        Me.Label4.Location = New System.Drawing.Point(30, 229)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(182, 20)
         Me.Label4.TabIndex = 12
@@ -644,7 +638,7 @@ Partial Class Form1
         '
         Me.MaterialProgressBar2.Depth = 0
         Me.MaterialProgressBar2.ForeColor = System.Drawing.Color.Red
-        Me.MaterialProgressBar2.Location = New System.Drawing.Point(32, 250)
+        Me.MaterialProgressBar2.Location = New System.Drawing.Point(30, 257)
         Me.MaterialProgressBar2.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialProgressBar2.Name = "MaterialProgressBar2"
         Me.MaterialProgressBar2.Size = New System.Drawing.Size(540, 5)
@@ -655,7 +649,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(32, 97)
+        Me.Label3.Location = New System.Drawing.Point(30, 104)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(129, 23)
         Me.Label3.TabIndex = 10
@@ -664,7 +658,7 @@ Partial Class Form1
         'MaterialProgressBar1
         '
         Me.MaterialProgressBar1.Depth = 0
-        Me.MaterialProgressBar1.Location = New System.Drawing.Point(32, 161)
+        Me.MaterialProgressBar1.Location = New System.Drawing.Point(30, 168)
         Me.MaterialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialProgressBar1.Name = "MaterialProgressBar1"
         Me.MaterialProgressBar1.Size = New System.Drawing.Size(540, 5)
@@ -1041,6 +1035,71 @@ Partial Class Form1
         Me.FormsPlot1.Size = New System.Drawing.Size(1164, 529)
         Me.FormsPlot1.TabIndex = 14
         '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.MaterialProgressBar3)
+        Me.Panel4.Controls.Add(Me.Label17)
+        Me.Panel4.Controls.Add(Me.LinkLabel7)
+        Me.Panel4.Controls.Add(Me.Label18)
+        Me.Panel4.Controls.Add(Me.Label5)
+        Me.Panel4.Controls.Add(Me.Label16)
+        Me.Panel4.Controls.Add(Me.MaterialProgressBar1)
+        Me.Panel4.Controls.Add(Me.Label15)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Controls.Add(Me.LinkLabel6)
+        Me.Panel4.Controls.Add(Me.MaterialProgressBar2)
+        Me.Panel4.Controls.Add(Me.LinkLabel5)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Controls.Add(Me.Label14)
+        Me.Panel4.Controls.Add(Me.Label12)
+        Me.Panel4.Controls.Add(Me.LinkLabel3)
+        Me.Panel4.Controls.Add(Me.Label13)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(3, 3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1266, 636)
+        Me.Panel4.TabIndex = 22
+        '
+        'MaterialProgressBar3
+        '
+        Me.MaterialProgressBar3.Depth = 0
+        Me.MaterialProgressBar3.ForeColor = System.Drawing.Color.Red
+        Me.MaterialProgressBar3.Location = New System.Drawing.Point(30, 352)
+        Me.MaterialProgressBar3.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialProgressBar3.Name = "MaterialProgressBar3"
+        Me.MaterialProgressBar3.Size = New System.Drawing.Size(540, 5)
+        Me.MaterialProgressBar3.TabIndex = 22
+        Me.MaterialProgressBar3.Value = 100
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(30, 324)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(233, 20)
+        Me.Label17.TabIndex = 23
+        Me.Label17.Text = "Dateien abgeholt und verschoben"
+        '
+        'LinkLabel7
+        '
+        Me.LinkLabel7.AutoSize = True
+        Me.LinkLabel7.Location = New System.Drawing.Point(592, 337)
+        Me.LinkLabel7.Name = "LinkLabel7"
+        Me.LinkLabel7.Size = New System.Drawing.Size(144, 20)
+        Me.LinkLabel7.TabIndex = 25
+        Me.LinkLabel7.TabStop = True
+        Me.LinkLabel7.Text = "Speicherpfad öffnen"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label18.Location = New System.Drawing.Point(30, 289)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(117, 23)
+        Me.Label18.TabIndex = 24
+        Me.Label18.Text = "HS-Download"
+        '
         'Form1
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -1062,13 +1121,14 @@ Partial Class Form1
         Me.TabPage1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1157,4 +1217,9 @@ Partial Class Form1
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents MaterialProgressBar3 As MaterialSkin.Controls.MaterialProgressBar
+    Friend WithEvents Label17 As Label
+    Friend WithEvents LinkLabel7 As LinkLabel
+    Friend WithEvents Label18 As Label
 End Class
